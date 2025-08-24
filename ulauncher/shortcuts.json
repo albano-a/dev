@@ -1,0 +1,92 @@
+{
+    "cef2fe4c-537d-4fc3-baeb-b36972123d48": {
+        "id": "cef2fe4c-537d-4fc3-baeb-b36972123d48",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1753843152.0543265
+    },
+    "0aeb9857-323e-4720-90e4-17b4a5d163bf": {
+        "id": "0aeb9857-323e-4720-90e4-17b4a5d163bf",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "https://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1753843152.0543585
+    },
+    "089ae188-eb2e-479f-a0c7-22c58422e5bc": {
+        "id": "089ae188-eb2e-479f-a0c7-22c58422e5bc",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://en.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1753843152.0543718
+    },
+    "4b8d83a0-f2ae-4a71-990e-ff71abeabbeb": {
+        "id": "4b8d83a0-f2ae-4a71-990e-ff71abeabbeb",
+        "name": "Ghostty",
+        "keyword": "!",
+        "cmd": "ghostty",
+        "icon": "~/Pictures/ghostty-logo.avif",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1754155714.4067597
+    },
+    "3da973d2-597d-49fc-b514-30cc656a07ad": {
+        "id": "3da973d2-597d-49fc-b514-30cc656a07ad",
+        "name": "Kabum",
+        "keyword": "kbm",
+        "cmd": "https://www.kabum.com.br/busca/%s\n",
+        "icon": "~/Pictures/i490135.jpeg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1754435706.8301945
+    },
+    "54ccee00-cef2-40dc-b63e-83e6a4c528b5": {
+        "id": "54ccee00-cef2-40dc-b63e-83e6a4c528b5",
+        "name": "Python",
+        "keyword": "py",
+        "cmd": "wezterm start -- python3",
+        "icon": "~/Pictures/python.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1754435824.849196
+    },
+    "3bfb2349-70ab-4636-b1a4-72440103d7d5": {
+        "id": "3bfb2349-70ab-4636-b1a4-72440103d7d5",
+        "name": "GPT",
+        "keyword": "gpt",
+        "cmd": "https://chatgpt.com/?model=auto",
+        "icon": "~/Pictures/ChatGPT-Logo.svg.png",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1754528509.1642404
+    },
+    "cb8184cf-8862-490b-88dd-72bfa76e5992": {
+        "id": "cb8184cf-8862-490b-88dd-72bfa76e5992",
+        "name": "Youtube",
+        "keyword": "yt",
+        "cmd": "https://www.youtube.com/results?search_query=%s",
+        "icon": "~/Pictures/pngtree-youtube-social-media-round-icon-png-image_6315993.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1754845212.8416464
+    },
+    "bb1662da-44aa-44bf-96a4-f54952afaae6": {
+        "id": "bb1662da-44aa-44bf-96a4-f54952afaae6",
+        "name": "tailwind css",
+        "keyword": "tail",
+        "cmd": "https://tailwindcss.com/docs/%s",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1755147499.937544
+    }
+}
