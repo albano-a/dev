@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo pacman -S bitwarden bitwarden-cli
+sudo pacman -S --noconfirm bitwarden bitwarden-cli

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo pacman -S ghostty
+sudo pacman -S --noconfirm ghostty
 
 cp -r ~/personal/dev/ghostty ~/.config/

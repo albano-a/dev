@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo pacman -S tmux
+sudo pacman -S --noconfirm tmux
 
 cp ~/personal/dev/.tmux.conf ~
