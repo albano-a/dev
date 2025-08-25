@@ -8,6 +8,5 @@ chmod +x ./chmod_all.sh
 source ./chmod_all.sh
 
 sudo systemctl enable gdm
-sudo systemctl start gdm
 reboot
 
