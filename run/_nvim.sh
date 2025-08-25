@@ -2,4 +2,4 @@
 
 sudo pacman -S nvim
 
-cp -r ../nvim ~/.config/
+cp -r ~/personal/dev/nvim ~/.config/

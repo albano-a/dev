@@ -1,5 +1,5 @@
 #!/bin/bash
 
-git clone https://aur.archlinux.org/ulauncher.git && cd ulauncher && makepkg -is
+git clone https://aur.archlinux.org/ulauncher.git ~/personal/dev/git_repos/ulauncher && cd ~/personal/dev/git_repos/ulauncher && makepkg -is
 
-cp ../ulauncher ~/.config/
+cp -r ~/personal/dev/ulauncher ~/.config/

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S github-cli
+sudo pacman -S github-cli wget
 
 if command -v gh &> /dev/null; then
     echo "GitHub CLI installed successfully"
