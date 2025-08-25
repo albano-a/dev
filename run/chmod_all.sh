@@ -4,23 +4,12 @@ chmod +x ./_ghostty.sh ./_gh.sh ./_node.sh ./_nvim.sh ./_yay.sh ./_ulauncher.sh 
 echo "=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!"
 echo "Sourcing scripts..."
 
-if source ./_zsh.sh; then
-    echo "✓ _zsh.sh sourced successfully"
-else
-    echo "✗ Failed to source _zsh.sh"
-fi
-
 if source ./_node.sh; then
     echo "✓ _node.sh sourced successfully"
 else
     echo "✗ Failed to source _node.sh"
 fi
 
-if source ./_yay.sh; then
-    echo "✓ _yay.sh sourced successfully"
-else
-    echo "✗ Failed to source _yay.sh"
-fi
 
 if source ./_nvim.sh; then
     echo "✓ _nvim.sh sourced successfully"
@@ -44,6 +33,18 @@ if source ./_packages.sh; then
     echo "✓ _packages.sh sourced successfully"
 else
     echo "✗ Failed to source _packages.sh"
+fi
+
+if source ./_yay.sh; then
+    echo "✓ _yay.sh sourced successfully"
+else
+    echo "✗ Failed to source _yay.sh"
+fi
+
+if source ./_zsh.sh; then
+    echo "✓ _zsh.sh sourced successfully"
+else
+    echo "✗ Failed to source _zsh.sh"
 fi
 
 echo "Done sourcing scripts."
