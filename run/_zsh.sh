@@ -3,9 +3,11 @@
 sudo pacman -S zsh
 hash -r
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s $(which zsh)
 
 if command -v zsh &> /dev/null; then
-    echo "GitHub CLI installed successfully"
+    echo "Zsh installed successfully"
+    echo $SHELL
 else
-    echo "GitHub CLI installation failed"
+    echo "Zsh installation failed"
 fi
