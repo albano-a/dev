@@ -1,51 +1,34 @@
 #!/bin/bash
 
-chmod +x ./_ghostty.sh ./_gh.sh ./_node.sh ./_nvim.sh ./_yay.sh ./_ulauncher.sh ./_zsh.sh ./_bitwarden.sh ./_tmux.sh ./_packages.sh
-echo "=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!"
+set -euo pipefail
+
+chmod +x ./_yay.sh ./_zsh.sh ./_packages.sh
+
+sep="<======================================================>"
+echo "$sep"
 echo "Sourcing scripts..."
 
-if source ./_node.sh; then
-    echo "✓ _node.sh sourced successfully"
-else
-    echo "✗ Failed to source _node.sh"
-fi
+source_script() {
+    script=$1
+    if source "./$script"; then
+        echo "✓ $script sourced successfully"
+    else
+        status=$?
+        echo "✗ Failed to source $script (exit code $status)"
+        echo "Reason:"
+        # print offending line with number
+        awk "NR==$LINENO{print NR\": \"$0}" "./$script"
+        exit $status
+    fi
+    echo
+}
 
+# trap for runtime errors inside sourced scripts
+trap 'echo "✗ Error in $BASH_SOURCE at line $LINENO: $BASH_COMMAND" >&2; exit 1' ERR
 
-if source ./_nvim.sh; then
-    echo "✓ _nvim.sh sourced successfully"
-else
-    echo "✗ Failed to source _nvim.sh"
-fi
-
-if source ./_ghostty.sh; then
-    echo "✓ _ghostty.sh sourced successfully"
-else
-    echo "✗ Failed to source _ghostty.sh"
-fi
-
-if source ./_ulauncher.sh; then
-    echo "✓ _ulauncher.sh sourced successfully"
-else
-    echo "✗ Failed to source _ulauncher.sh"
-fi
-
-if source ./_packages.sh; then
-    echo "✓ _packages.sh sourced successfully"
-else
-    echo "✗ Failed to source _packages.sh"
-fi
-
-if source ./_yay.sh; then
-    echo "✓ _yay.sh sourced successfully"
-else
-    echo "✗ Failed to source _yay.sh"
-fi
-
-if source ./_zsh.sh; then
-    echo "✓ _zsh.sh sourced successfully"
-else
-    echo "✗ Failed to source _zsh.sh"
-fi
+source_script "_packages.sh"
+source_script "_yay.sh"
+source_script "_zsh.sh"
 
 echo "Done sourcing scripts."
-echo "=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!=!"
+echo "$sep"

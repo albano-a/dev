@@ -1,8 +1,6 @@
 #!/bin/bash
 
-git clone https://aur.archlinux.org/ulauncher.git ~/personal/dev/git_repos/ulauncher && cd ~/personal/dev/git_repos/ulauncher && makepkg -is
-
-cp -r ~/personal/dev/ulauncher ~/.config/
+cp "$HOME/personal/dev/wallpaper/"* "$HOME/Pictures/"
 
 # Path for the new custom shortcut
 path='/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/'
@@ -20,4 +18,3 @@ gsettings set org.gnome.desktop.screensaver picture-options 'zoom'
 # Add the custom shortcut to GNOME
 current=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings)
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['$path']"
-

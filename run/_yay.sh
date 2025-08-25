@@ -1,21 +1,50 @@
 #!/bin/bash
 
-# It installs yay and then installs other packages from it
+set -e
 
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git ~/personal/dev/git_repos/yay
-cd ~/personal/dev/git_repos/yay
-makepkg -si
+dev="$HOME/personal/dev"
+cfg="$HOME/.config"
+yay_dir="$dev/git_repos/yay"
 
-if pacman -Qq visual-studio-code-bin &> /dev/null; then
-    echo "Visual Studio Code is already installed."
-    echo "Version"
-    yay -Q visual-studio-code-bin
-    echo "Checking for updates..."
-    yay -Qu visual-studio-code-bin
-else
-    echo "Installing Visual Studio Code..."
-    yay -S visual-studio-code-bin --answerclean All --answerdiff None
-fi
+aur_pkgs=(
+    visual-studio-code-bin
+    zen-browser-bin
+    ulauncher
+)
 
-yay -S --noconfirm zen-browser-bin --answerclean All --answerdiff None
+install_yay() {
+    if command -v yay &> /dev/null; then
+        echo "yay already installed"
+        return
+    fi
+    
+    echo "Installing yay..."
+    sudo pacman -S --needed --noconfirm git base-devel
+    
+    mkdir -p "$dev/git_repos"
+    git clone https://aur.archlinux.org/yay.git "$yay_dir"
+    cd "$yay_dir"
+    makepkg -si --noconfirm
+    cd - > /dev/null
+}
+
+install_aur_packages() {
+    for pkg in "${aur_pkgs[@]}"; do
+        if pacman -Qq "$pkg" &> /dev/null; then
+            echo "$pkg already installed - $(yay -Q "$pkg")"
+        else
+            echo "Installing $pkg..."
+            yay -S --noconfirm "$pkg" --answerclean All --answerdiff None
+        fi
+    done
+}
+
+install_yay
+install_aur_packages
+
+cp -r "$dev/ulauncher" "$cfg/"
+
+echo "AUR packages installed successfully"
+
+echo "Press Enter to continue..."
+read
