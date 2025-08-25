@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp "$HOME/personal/dev/wallpaper/"* "$HOME/Pictures/"
+cp "$HOME/personal/dev/wallpaper/"* "$HOME/"
 
 # Path for the new custom shortcut
 path='/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/'

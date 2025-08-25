@@ -1,18 +1,31 @@
 #!/bin/bash
 
+set -e
+
+echo "Enabling multilib repository..."
 sudo sed -i '/\[multilib\]/,/Include/ s/^#//' /etc/pacman.conf && sudo pacman -Sy
-sudo pacman -Syu
+
+echo "Updating system..."
+sudo pacman -Syu --noconfirm
+
+echo "Installing GNOME desktop environment..."
 sudo pacman -S --noconfirm gnome gnome-tweaks gnome-browser-connector wget curl
 
-if chmod +x ./chmod_all.sh && source ./chmod_all.sh; then
-    echo "chmod_all.sh executed successfully"
+echo "Installing essential GNOME components..."
+sudo pacman -S --noconfirm gnome-backgrounds file-roller nautilus-sendto evince eog
+
+if chmod +x ./services.sh && source ./services.sh; then
+    echo "services.sh executed successfully"
 else
-    echo "Error: Failed to execute chmod_all.sh - only GNOME was installed"
+    echo "Error: Failed to execute services.sh - only GNOME was installed"
     exit 1
 fi
 
-read -p "Press Enter to continue with system setup..."
-
+echo "Enabling GDM display manager..."
 sudo systemctl enable gdm
-reboot
 
+echo "GNOME installation complete!"
+echo "Press Enter to reboot..."
+read
+
+reboot

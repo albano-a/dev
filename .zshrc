@@ -112,11 +112,14 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+base_dir="$HOME/personal/dev"
+repos_dir="$base_dir/git_repos"
+theme_repo="$repos_dir/zsh-syntax-highlighting"
 
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.config/rofi/scripts:$PATH
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $theme_repo/zsh-syntax-highlighting.zsh
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
 
 if command -v tmux >/dev/null 2>&1; then

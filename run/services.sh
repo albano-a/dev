@@ -28,7 +28,7 @@ trap 'echo "✗ Error in $BASH_SOURCE at line $LINENO: $BASH_COMMAND" >&2; exit 
 
 source_script "_packages.sh"
 source_script "_yay.sh"
-source_script "_zsh.sh"
+# source_script "_zsh.sh"
 
 echo "Done sourcing scripts."
 echo "$sep"
