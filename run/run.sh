@@ -8,7 +8,7 @@ sudo pacman -Syu --noconfirm
 
 
 # Run services script
-./_services.sh
+./services.sh
 
 # Run gnome script
 ./before/_gnome.sh

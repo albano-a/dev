@@ -26,8 +26,8 @@ source_script() {
 # trap for runtime errors inside sourced scripts
 trap 'echo "✗ Error in $BASH_SOURCE at line $LINENO: $BASH_COMMAND" >&2; exit 1' ERR
 
-source_script "_packages.sh"
-source_script "_yay.sh"
+source_script "before/_packages.sh"
+source_script "before/_yay.sh"
 
 echo "Done sourcing scripts."
 echo "$sep"
