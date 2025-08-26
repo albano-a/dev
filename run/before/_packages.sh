@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 pkgs=(
     steam lutris wine winetricks qt5-tools
     libreoffice-still
@@ -17,6 +18,7 @@ pkgs=(
     bitwarden-cli
     ghostty
     github-cli
+    neofetch
 )
 
 sudo pacman -S --noconfirm "${pkgs[@]}"

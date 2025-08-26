@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-chmod +x ./_yay.sh ./_zsh.sh ./_packages.sh
+chmod +x ./before/_yay.sh ./before/_packages.sh ./_zsh.sh
 
 sep="<======================================================>"
 echo "$sep"
@@ -28,7 +28,6 @@ trap 'echo "✗ Error in $BASH_SOURCE at line $LINENO: $BASH_COMMAND" >&2; exit 
 
 source_script "_packages.sh"
 source_script "_yay.sh"
-# source_script "_zsh.sh"
 
 echo "Done sourcing scripts."
 echo "$sep"

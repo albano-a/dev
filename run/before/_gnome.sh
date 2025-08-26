@@ -2,12 +2,6 @@
 
 set -e
 
-echo "Enabling multilib repository..."
-sudo sed -i '/\[multilib\]/,/Include/ s/^#//' /etc/pacman.conf && sudo pacman -Sy
-
-echo "Updating system..."
-sudo pacman -Syu --noconfirm
-
 echo "Installing GNOME desktop environment..."
 sudo pacman -S --noconfirm gnome gnome-tweaks gnome-browser-connector wget curl
 
