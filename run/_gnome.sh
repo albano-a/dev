@@ -12,7 +12,7 @@ echo "Installing GNOME desktop environment..."
 sudo pacman -S --noconfirm gnome gnome-tweaks gnome-browser-connector wget curl
 
 echo "Installing essential GNOME components..."
-sudo pacman -S --noconfirm gnome-backgrounds file-roller nautilus-sendto evince eog
+sudo pacman -S --noconfirm gnome-backgrounds file-roller evince eog
 
 if chmod +x ./services.sh && source ./services.sh; then
     echo "services.sh executed successfully"
