@@ -10,6 +10,7 @@ aur_pkgs=(
     visual-studio-code-bin
     zen-browser-bin
     ulauncher
+    neofetch 
 )
 
 install_yay() {

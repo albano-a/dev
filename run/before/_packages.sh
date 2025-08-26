@@ -18,7 +18,6 @@ pkgs=(
     bitwarden-cli
     ghostty
     github-cli
-    neofetch
 )
 
 sudo pacman -S --noconfirm "${pkgs[@]}"
