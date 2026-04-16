@@ -46,7 +46,7 @@ font-family = CaskaydiaCove Nerd Font
 font-feature = liga
 font-size = 12.0
 
-theme=catppuccin-mocha
+theme= Catppuccin Mocha
 
 cursor-color = cba6f7
 cursor-style = block

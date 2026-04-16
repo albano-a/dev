@@ -9,8 +9,9 @@ yay_dir="$dev/git_repos/yay"
 aur_pkgs=(
     visual-studio-code-bin
     zen-browser-bin
-    ulauncher
+    catapult
     neofetch 
+    helium
 )
 
 install_yay() {
